@@ -1,0 +1,26 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ShopDesignArticle>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "Master.cshtml";
+}
+
+@{
+var image = Model.Value<IPublishedContent>("articleImage");
+}
+
+
+<section class=" p-3">
+        
+        <div class="text-center container ">
+            <ul class="list">
+                
+                <li><h1 class="text-dark projectname">@Model.Value("articleTitle")</h1></li>
+                <li><p class=" text-gray  mb-3">@Model.Value("articleSubtitle")</p></li>
+                <li> <img class="p-3" src="@image.Url()"  height="600px"></li>
+                <li><p class=" text-gray   mb-3">@Model.Value("shopDesignContent")</p></li>
+                
+            </ul>   
+        </div>
+        
+    </section>

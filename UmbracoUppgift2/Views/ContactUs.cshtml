@@ -1,0 +1,33 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ContactUs>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "Master.cshtml";
+}
+
+ <section class="contact-section p-5">
+          <div class="d-flex container justify-content-between p-5">
+              <div class="text-left">
+                  <h1 class="p-b">Contact Us</h1>
+                  <h5> Our adress:</h5>
+                  <div>Hagavägen 11, 749** Enköping</div>
+                 <hr>   
+                  <h5> Phone:</h5>
+                  <p> 07**941**</p>
+              </div>
+              <div class="text-center">
+                <div class="mb-3">
+                    <input type="email" class="form-control input" placeholder="Enter your name" size="80">
+                  </div>
+                <div class="mb-3">
+                    <input type="email" class="form-control input" placeholder="Enter your email" size="80">
+                  </div>
+                  <div class="mb-3">
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Enter your message"></textarea>
+                  </div>
+                  <button class="btn btn-primary">Send</button>
+              </div>
+
+          </div>
+
+  </section>

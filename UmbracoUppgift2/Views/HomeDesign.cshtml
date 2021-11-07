@@ -1,0 +1,41 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.HomeDesign>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "Master.cshtml";
+}
+
+
+<h1 class="text-center m-5 p-3">Home Design</h1>
+     <section class="projects">
+         @{
+        	var selection = Umbraco.Content(1090)
+            .ChildrenOfType("homeDesignArticle")
+            .Where(x => x.IsVisible());
+        }
+        
+         <div class="text-center mb-5">
+             @foreach (var item in selection)
+             {
+                var image = item.Value<IPublishedContent>("articleImage");
+                
+                     <ul class="list">
+                         <li> <img  src="@image.Url()" height="600px" width="1000px"></li>
+                         <li><a class="btn btn-secondery text-dark projectname"  href="@item.Url()">@item.Value("articleTitle")</a></li>
+                         <li><p class=" text-dark  mb-3">@item.Value("articleSubtitle")</p></li>
+                         <li><a class=" btn btn-light text-dark mb-5"  href="@item.Url()">Read more</a></li>
+                     </ul>   
+
+                 }
+          </div>
+  
+         
+     </section>
+     
+     
+
+
+
+     
+
+

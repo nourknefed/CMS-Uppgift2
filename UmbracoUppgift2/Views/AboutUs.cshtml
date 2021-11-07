@@ -1,0 +1,72 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.AboutUs>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "Master.cshtml";
+}
+
+  <!-- about us starts -->
+  
+  @{
+  	var pic = Model.Value<IPublishedContent>("aboutImage");
+  }
+     <div class="d-flex container">
+         <img src="@pic.Url()">
+         <div class="m-5 text-center">
+             <h1>@Model.Value("aboutUsTitle")</h1>
+             <p class="mt-5">@Model.Value("aboutContent")</p>
+         </div>
+     </div>
+     <!-- about us ends -->
+
+     <!-- our Teams starts -->
+     <section class="ourteam text-center">
+         <div class="container">
+            <h1 class="pt-5 pb-3">Our Team </h1>
+            <div class="row ">
+                @{
+                	var members = Umbraco.Content(1135)
+                    .ChildrenOfType("teamMember")
+                    .Where(x => x.IsVisible())
+                    .OrderBy(x => x.Name);
+                }
+                
+                	@foreach (var member in members)
+                	{   
+                	
+                		var image = member.Value<IPublishedContent>("teamMemberImage");
+                		
+                	
+                			
+                			<div class="col-3 pb-5">
+                                   <div class="card"  >
+                                       	@if (image is null){
+                		                   <img class="card-img-top" height="305px" width="305px" src="/media/2.svg">
+                	                	}
+                	                	else{
+                                       <img src="@image.Url()" class="card-img-top" height="305px" width="305px">
+                                       }
+                                       <div class="card-body">
+                                       <h3 class="">@member.Value("teamMemberName")</h3>
+                                       <p class="">@member.Value("teamMemberTitle")</p>
+                                      
+                                       </div>
+                                   </div>
+                               </div> 
+                	}
+
+
+
+               
+               
+
+               
+
+                
+            </div>   
+
+         </div>
+         
+
+     </section>
+     <!-- our Teams ends -->

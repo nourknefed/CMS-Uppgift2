@@ -1,0 +1,103 @@
+
+        *,body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: #000000;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;  
+}
+
+/* home css strarts */
+
+.centered {
+    position: absolute;
+    top: 30%;
+    left: 65%;
+    transform: translate(-50%, -50%);
+  }
+  .title{
+    color: white;
+    font-size: 50px; 
+    font-weight: 500;
+  }
+  .sub-title{
+    color: white;
+    font-size: 20px; 
+  }
+  .selected{
+      margin-top: 30px;
+      justify-content: center;
+      text-align: center;
+  }
+  h1{
+    font-weight: 700;
+  }
+  .footer{
+      background-color: rgb(41, 40, 40);
+      margin-top: 100px;
+  }
+  .dot{
+    height: 30px;
+    width: 30px;
+    background-color: #3B5999;
+    border-radius: 50%;
+    display: inline-flex;
+    text-align: center;
+    margin-right: 5px;
+    margin-left: 8px;
+   position: relative;
+    align-items: center; 
+    justify-content: center;
+  }
+  .blue{
+    background-color: #0fc4e4;
+  }
+  .pink{
+    background-color: #e40f8b;
+  }
+/* home css ends */
+
+/* homeDesign css starts */
+.projects{
+    background-color:rgb(243, 239, 224);
+    justify-content: center;
+
+}
+
+.projectname{
+font-size: 30px;
+}
+.list{
+    list-style-type: none; 
+}
+/* homeDesign css ends */
+/*our team starts*/
+.ourteam{
+    background-color: rgb(197, 191, 170);
+
+}
+/*our team ends*/
+
+/*Contact Us starts*/
+.contact-section{
+    background-color: rgb(231, 231, 231);
+}
+/*Contact Us ends*/
+/*office design starts*/
+
+.office{
+    width: 800px;
+    justify-content: center;
+    background-color:rgb(243, 239, 224);
+}
+
+.text-gray{ 
+    color: gray;
+    font-size: 16px;
+}
+
+/*office design ends*/
+
+
+

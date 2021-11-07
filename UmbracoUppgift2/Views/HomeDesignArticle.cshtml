@@ -1,0 +1,30 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.HomeDesignArticle>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "Master.cshtml";
+}
+
+@{var image = Model.Value<IPublishedContent>("articleImage");
+var image2 = Model.Value<IPublishedContent>("homeDesignimage2");
+var image3 = Model.Value<IPublishedContent>("homeDesignImage3");
+}
+
+ <section class=" p-3">
+        
+        <div class="text-center container ">
+            <ul class="list">
+                
+                <li><h1 class="text-dark projectname">@Model.Value("articleTitle")</h1></li>
+                <li><p class=" text-gray  mb-3">@Model.Value("articleSubtitle")</p></li>
+                <li> <img class="p-3" src="@image.Url()"  height="600px"></li>
+                <li><p class=" text-gray   mb-3">@Model.Value("homeDesignContent")</p></li>
+                <div class="d-flex justify-content-center">
+                    <img class="p-3" src="@image2.Url()"  height="350px">
+                    <img class="p-3" src="@image3.Url()"  height="350px"> 
+                </div>
+                <li><p class=" text-gray mb-3">@Model.Value("homeDesignContent2")</p></li>
+            </ul>   
+        </div>
+        
+    </section>
